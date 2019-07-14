@@ -2,11 +2,9 @@ $(document).ready(function () {
     //variables and button array
     let animals = ["pig", "cow", "lizard", "snake", "quokka"]
 
-    // const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
+    const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
 
-    // let buttonVal = "cheeseburger"
 
-    // let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonVal + "&limit=10&api_key=" + apiKey;
 
     //makes the buttons
     makeButtons = () => {
@@ -30,25 +28,43 @@ $(document).ready(function () {
         makeButtons();
     });
 
-    $(".gifBtn").on("click", function (event) {
-        event.preventDefault();
-        // $("button").attr("data-name")
-        console.log("test");
-    });
-
     makeButtons();
 
+    $(".gifBtn").on("click", function (event) {
+        event.preventDefault();
+
+        let btnVal = $(this).attr("data-name")
+        console.log(btnVal);
+
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + btnVal + "&limit=10&api_key=" + apiKey;
+
+        $.ajax({
+            type: "GET",
+            url: queryURL,
+            success: function (response) {
+
+                let results = response.data;
+                console.log(results);
+
+                for (let j = 0; j < results.length; j++) {
+                    let gifUrl = results[j].images.fixed_height.url;
+                    let rating = results[j].rating;
+                    let gifTemplate = `
+                <p>Rating: ${rating}</p>
+                <img src="${gifUrl}">
+                <br>
+                `
+                $(".gifs").prepend(gifTemplate);
+                }
+            }
+        });
+
+
+    });
 
 
 
-    // $.ajax({
-    //     type: "GET",
-    //     url: queryURL,
-    //     success: function (response) {
-    //         console.log(response);
-    //         let results = response.data;
 
-    //     }
-    // });
+
 
 });
