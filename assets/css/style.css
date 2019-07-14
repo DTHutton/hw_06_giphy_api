@@ -1,4 +1,4 @@
-.test {
-    font-weight: bold;
-    font-size: 50px;
+#firstButton {
+    height: 50px;
+    width: 50px;
 }

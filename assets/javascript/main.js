@@ -5,9 +5,10 @@ $(document).ready(function () {
 
     $('.jQuery').text('it works!')
 
-    const apiKey = 'gAw2fynIwAANSTYnFxo7kHEYbOEsfAov'
+    const apiKey = 'gAw2fynIwAANSTYnFxo7kHEYbOEsfAov';
+    let buttonVal = 'cheeseburger'
 
-    let queryURL = "https://api.giphy.com/v1/gifs/search?q=cheeseburger&limit=5&api_key=" + apiKey;
+    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonVal + "&limit=10&api_key=" + apiKey;
 
     $.ajax({
         type: "GET",
