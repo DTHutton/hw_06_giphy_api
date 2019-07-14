@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
 
     //makes buttons based on user input
-    $("#submitBtn").on("click", function (event) {
+    $("#submitBtn").on("click", function (event) { 
         event.preventDefault();
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
