@@ -19,7 +19,7 @@ $(document).ready(function () {
             $(".buttons").append(btnTemplate);
         }
     }
-    
+
     makeButtons();
 
     //makes buttons based on user input
@@ -28,7 +28,7 @@ $(document).ready(function () {
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
         makeButtons();
-        
+
     });
 
 
@@ -50,12 +50,13 @@ $(document).ready(function () {
                 console.log(results);
 
                 for (let j = 0; j < results.length; j++) {
-                    let gifUrl = results[j].images.fixed_height.url;
+                    let stillUrl = results[j].images.fixed_height_still.url;
+                    let animateUrl = results[j].images.fixed_height.url;
                     let rating = results[j].rating;
                     let gifTemplate = `
                 <div class="gifs">
                     <p>Rating: ${rating}</p>
-                    <img src="${gifUrl}">
+                    <img src="${stillUrl}" data-animate="${animateUrl} data-still="${stillUrl} data-state="still" class="gifSrc">
                     <br>
                 </div>
                 `
@@ -65,9 +66,19 @@ $(document).ready(function () {
         });
     });
 
+    //pause and unpause gifs
+    $(".gifDisplay").on("click", ".gifSrc", function () {
 
+        let state = $(this).attr("data-state");
 
-
-
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+        console.log(state);
+    });
 
 });
