@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //api key and button array
-    let animals = ["pig", "cow", "lizard", "snake", "quokka"]
+    let animals = ["pig", "cow", "lizard", "snake", "elephant"]
 
     const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         let btnVal = $(this).attr("data-name")
         console.log(btnVal);
 
-        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + btnVal + "&limit=10&api_key=" + apiKey;
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + btnVal + "&limit=10&rating=g&rating=pg&api_key=" + apiKey;
 
         $.ajax({
             type: "GET",

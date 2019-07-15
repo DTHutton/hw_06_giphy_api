@@ -1,0 +1,8 @@
+.gifDisplay, .newButton, .buttons {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gifs, .gifBtn, .newButton, .newBtnStyle {
+    margin: 5px;
+}
