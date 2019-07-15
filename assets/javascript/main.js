@@ -5,7 +5,6 @@ $(document).ready(function () {
 
     const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
 
-
     //makes the buttons
     makeButtons = () => {
         $(".buttons").empty();
@@ -28,7 +27,6 @@ $(document).ready(function () {
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
         makeButtons();
-
     });
 
 
@@ -56,7 +54,7 @@ $(document).ready(function () {
                     let gifTemplate = `
                 <div class="gifs">
                     <p>Rating: ${rating}</p>
-                    <img src="${stillUrl}" data-animate="${animateUrl} data-still="${stillUrl} data-state="still" class="gifSrc">
+                    <img src="${stillUrl}" data-animate="${animateUrl}" data-still="${stillUrl}" data-state="still" class="gifSrc">
                     <br>
                 </div>
                 `
@@ -78,7 +76,6 @@ $(document).ready(function () {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
-        console.log(state);
     });
 
 });
