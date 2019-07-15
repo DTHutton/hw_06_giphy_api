@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    //variables and button array
+
+    //api key and button array
     let animals = ["pig", "cow", "lizard", "snake", "quokka"]
 
     const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
-
 
 
     //makes the buttons
@@ -19,6 +19,8 @@ $(document).ready(function () {
             $(".buttons").append(btnTemplate);
         }
     }
+    
+    makeButtons();
 
     //makes buttons based on user input
     $("#submitBtn").on("click", function (event) {
@@ -26,11 +28,12 @@ $(document).ready(function () {
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
         makeButtons();
+        
     });
 
-    makeButtons();
 
-    $(".gifBtn").on("click", function (event) {
+    //generates gifs 
+    $(".buttons").on("click", ".gifBtn", function (event) {
         event.preventDefault();
 
         let btnVal = $(this).attr("data-name")
@@ -50,16 +53,16 @@ $(document).ready(function () {
                     let gifUrl = results[j].images.fixed_height.url;
                     let rating = results[j].rating;
                     let gifTemplate = `
-                <p>Rating: ${rating}</p>
-                <img src="${gifUrl}">
-                <br>
+                <div class="gifs">
+                    <p>Rating: ${rating}</p>
+                    <img src="${gifUrl}">
+                    <br>
+                </div>
                 `
-                $(".gifs").prepend(gifTemplate);
+                    $(".gifDisplay").prepend(gifTemplate);
                 }
             }
         });
-
-
     });
 
 
