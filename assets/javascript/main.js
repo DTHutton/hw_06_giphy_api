@@ -27,6 +27,7 @@ $(document).ready(function () {
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
         makeButtons();
+        $("#textBox").val("");
     });
 
 
