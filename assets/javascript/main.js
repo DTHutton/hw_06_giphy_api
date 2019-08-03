@@ -30,7 +30,6 @@ $(document).ready(function () {
         $("#textBox").val("");
     });
 
-
     //generates gifs 
     $(".buttons").on("click", ".gifBtn", function (event) {
         event.preventDefault();
