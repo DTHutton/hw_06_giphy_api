@@ -78,9 +78,18 @@ body {
 }
 
 /* gif images */
-/* .gifPortrait {
+.gifSrc {
+    align-content: center;
+    margin: 1px;
+    padding: 1px;
+}
 
-} */
+/* rating info text */
+.ratingInfo {
+    font-family: 'Noticia Text', serif;
+    font-size: 16px;
+    text-align: center;
+}
 
 /* overall gif area */
 .gifDisplay {
