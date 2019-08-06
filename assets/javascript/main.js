@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     const apiKey = "gAw2fynIwAANSTYnFxo7kHEYbOEsfAov";
 
-    //makes the buttons
+    //makes initial buttons
     makeButtons = () => {
         $(".buttons").empty();
         for (let i = 0; i < animals.length; i++) {
@@ -53,8 +53,8 @@ $(document).ready(function () {
                     let rating = results[j].rating;
                     let gifTemplate = `
                 <div class="gifs">
-                    <p>Rating: ${rating}</p>
-                    <img src="${stillUrl}" data-animate="${animateUrl}" data-still="${stillUrl}" data-state="still" class="gifSrc">
+                    <p class="ratingInfo">Rating: ${rating}</p>
+                    <img src="${stillUrl}" data-animate="${animateUrl}" data-still="${stillUrl}" data-state="still" class="gifSrc gifPortrait">
                     <br>
                 </div>
                 `

@@ -1,3 +1,8 @@
+body {
+    background-image: url("../images/freestocks-org-AjTs6TS3k_w-unsplash.jpg");
+    width: 100%;
+}
+
 .gifDisplay, .newButton, .buttons {
     display: flex;
     flex-flow: row wrap;
@@ -6,3 +11,37 @@
 .gifs, .gifBtn, .newButton, .newBtnStyle {
     margin: 5px;
 }
+
+/* button form */
+.newButton {
+    border: 1px solid black;
+}
+
+/* .instructions {
+
+} */
+
+.topBar {
+    display: flex row;
+    justify-content: space-between;
+}
+
+/* buttons section */
+.buttons {
+    border: 1px solid black;
+}
+
+/* individual gif styles */
+.gifs {
+    border: 1px solid black;
+}
+
+/* git images */
+/* .gifPortrait {
+
+} */
+
+/* overall gif area */
+/* .gifDisplay {
+
+} */

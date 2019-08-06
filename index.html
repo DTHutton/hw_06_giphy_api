@@ -7,25 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Giphy API hw_06</title>
 
-    <!-- css -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- javascript -->
+    <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/main.js"></script>
-    
+
 </head>
 
 <body>
 
-    <section class="buttons"></section>
+    <span class="topBar">
+        <form class="newButton">
+            <label class="newBtnStyle" for="animalArray">Add new animal</label>
+            <input class="newBtnStyle" id="textBox" type="text" name="userInput">
+            <input class="newBtnStyle" id="submitBtn" type="submit" value="Add animal"></input>
+        </form>
+        <p class="instuctions">Click on the buttons to generate gifs of animals. Don't like any animals on the list? Add your own!</p>
+    </span>
 
-    <form class="newButton">
-        <label class="newBtnStyle" for="animalArray">Add new animal</label>
-        <input class="newBtnStyle" id="textBox" type="text" name="userInput">
-        <input class="newBtnStyle" id="submitBtn" type="submit" value="Add animal"></input>
-    </form>
+    <section class="buttons"></section>
 
     <section class="gifDisplay"></section>
 
