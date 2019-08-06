@@ -24,10 +24,15 @@ $(document).ready(function () {
     //makes buttons based on user input
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
+
+        if ($("#textBox").val() === "") {
+            console.log("Not a valid input.");
+        } else {
         let userInput = $("#textBox").val().trim();
         animals.push(userInput);
         makeButtons();
         $("#textBox").val("");
+        }
     });
 
     //generates gifs 
