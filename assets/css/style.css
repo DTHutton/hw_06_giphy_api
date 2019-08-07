@@ -75,13 +75,17 @@ body {
 /* individual gifs */
 .gifs {
     border: 1px solid black;
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(219, 220, 223, 0.9);
 }
 
 /* gif images */
 .gifSrc {
     align-content: center;
-    margin: 1px;
-    padding: 1px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    padding: 0px;
 }
 
 /* rating info text */
@@ -89,6 +93,12 @@ body {
     font-family: 'Noticia Text', serif;
     font-size: 16px;
     text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-top: 2px;
+    border-radius: 15px;
+    margin-top: 0px;
+    padding: 1px;
 }
 
 /* overall gif area */
